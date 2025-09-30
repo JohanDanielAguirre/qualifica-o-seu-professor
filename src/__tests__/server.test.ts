@@ -8,7 +8,13 @@ describe('entry: src/server.ts', () => {
 
   it('calls connectDB and starts server with PORT from env', async () => {
     const mockConnectDB = jest.fn().mockResolvedValue(undefined);
-    const mockListen = jest.fn((port: number, cb?: () => void) => cb && cb());
+    const mockListen = jest.fn((port: number, host: string | (() => void), cb?: () => void) => {
+      if (typeof host === 'function') {
+        host();
+      } else if (cb) {
+        cb();
+      }
+    });
     const consoleSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
 
     jest.resetModules();
@@ -21,15 +27,21 @@ describe('entry: src/server.ts', () => {
     await startServer();
 
     expect(mockConnectDB).toHaveBeenCalled();
-  expect(mockListen).toHaveBeenCalledWith(process.env.PORT, expect.any(Function));
-  expect(consoleSpy).toHaveBeenCalledWith(`API up on :${process.env.PORT}`);
+    expect(mockListen).toHaveBeenCalledWith(4321, '0.0.0.0', expect.any(Function));
+    expect(consoleSpy).toHaveBeenCalledWith('API up on 0.0.0.0:4321');
 
     consoleSpy.mockRestore();
   });
 
   it('defaults to 3000 when PORT not set', async () => {
     const mockConnectDB = jest.fn().mockResolvedValue(undefined);
-    const mockListen = jest.fn((port: number, cb?: () => void) => cb && cb());
+    const mockListen = jest.fn((port: number, host: string | (() => void), cb?: () => void) => {
+      if (typeof host === 'function') {
+        host();
+      } else if (cb) {
+        cb();
+      }
+    });
     const consoleSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
 
     jest.resetModules();
@@ -41,15 +53,21 @@ describe('entry: src/server.ts', () => {
     const { startServer } = await import('../server');
     await startServer();
 
-  expect(mockListen).toHaveBeenCalledWith(3000, expect.any(Function));
-  expect(consoleSpy).toHaveBeenCalledWith('API up on :3000');
+    expect(mockListen).toHaveBeenCalledWith(3000, '0.0.0.0', expect.any(Function));
+    expect(consoleSpy).toHaveBeenCalledWith('API up on 0.0.0.0:3000');
 
     consoleSpy.mockRestore();
   });
 
   it('uses port parameter when provided', async () => {
     const mockConnectDB = jest.fn().mockResolvedValue(undefined);
-    const mockListen = jest.fn((port: number, cb?: () => void) => cb && cb());
+    const mockListen = jest.fn((port: number, host: string | (() => void), cb?: () => void) => {
+      if (typeof host === 'function') {
+        host();
+      } else if (cb) {
+        cb();
+      }
+    });
     const consoleSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
 
     jest.resetModules();
@@ -61,8 +79,8 @@ describe('entry: src/server.ts', () => {
     await startServer(8080);
 
     expect(mockConnectDB).toHaveBeenCalled();
-    expect(mockListen).toHaveBeenCalledWith(8080, expect.any(Function));
-    expect(consoleSpy).toHaveBeenCalledWith('API up on :8080');
+    expect(mockListen).toHaveBeenCalledWith(8080, '0.0.0.0', expect.any(Function));
+    expect(consoleSpy).toHaveBeenCalledWith('API up on 0.0.0.0:8080');
 
     consoleSpy.mockRestore();
   });

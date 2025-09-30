@@ -62,7 +62,7 @@ describe('connectDB', () => {
       await connectDB();
 
       expect(mockConnect).toHaveBeenCalledWith(
-        'mongodb://testuser:testpass@localhost:27017/testdb?authSource=admin',
+        'mongodb://localhost:27017/testdb',
         expect.objectContaining({ dbName: 'testdb' })
       );
     });
@@ -149,7 +149,7 @@ describe('connectDB', () => {
       
       expect(consoleSpy).toHaveBeenCalledWith(
         'Connecting to MongoDB with URI:', 
-        'mongodb://testuser:****@localhost:27017/testdb?authSource=admin'
+        'mongodb://localhost:27017/testdb'
       );
     });
   });
