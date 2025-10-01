@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "ebca62d1-6d61-4754-9116-9a95f286a505",
+		"_postman_id": "5ef3bfa4-6701-4b3e-84d6-d69f155bd8db",
 		"name": "apiExpress",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "42534240"
+		"_exporter_id": "44853341"
 	},
 	"item": [
 		{
@@ -43,11 +43,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/auth/login",
+							"raw": "{{dominio}}/api/auth/login",
 							"host": [
-								"localhost"
+								"{{dominio}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"auth",
@@ -95,7 +94,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Nuevo Usuario\",\r\n    \"email\": \"nuevo@example.com\",\r\n    \"password\": \"password123\",\r\n    \"role\": \"user\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Nuevo Usuario\",\r\n    \"email\": \"nuevo1@gmail.com\",\r\n    \"password\": \"password123\",\r\n    \"role\": \"user\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -103,11 +102,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/auth/register",
+							"raw": "{{dominio}}/api/auth/register",
 							"host": [
-								"localhost"
+								"{{dominio}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"auth",
@@ -153,11 +151,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/auth/login",
+							"raw": "{{dominio}}/api/auth/login",
 							"host": [
-								"localhost"
+								"{{dominio}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"auth",
@@ -207,11 +204,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/auth/register",
+							"raw": "{{dominio}}/api/auth/register",
 							"host": [
-								"localhost"
+								"{{dominio}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"auth",
@@ -256,11 +252,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/auth/login",
+							"raw": "{{dominio}}/api/auth/login",
 							"host": [
-								"localhost"
+								"{{dominio}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"auth",
@@ -305,11 +300,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/auth/register",
+							"raw": "{{dominio}}/api/auth/register",
 							"host": [
-								"localhost"
+								"{{dominio}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"auth",
@@ -356,11 +350,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/auth/me",
+							"raw": "{{dominio}}/api/auth/me",
 							"host": [
-								"localhost"
+								"{{dominio}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"auth",
@@ -396,11 +389,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/auth/me",
+							"raw": "{{dominio}}/api/auth/me",
 							"host": [
-								"localhost"
+								"{{dominio}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"auth",
@@ -426,11 +418,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/auth/me",
+							"raw": "{{dominio}}/api/auth/me",
 							"host": [
-								"localhost"
+								"{{dominio}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"auth",
@@ -462,7 +453,9 @@
 									"    pm.globals.set(\"universityId\", jsonData._id);",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -489,12 +482,17 @@
 							"raw": "{\n    \"name\": \"Universidad de Prueba\",\n    \"country\": \"Colombia\",\n    \"city\": \"Bogotá\"\n}"
 						},
 						"url": {
-							"raw": "localhost:3000/api/universities",
-							"host": ["localhost"],
-							"port": "3000",
-							"path": ["api", "universities"]
+							"raw": "{{dominio}}/api/universities",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"api",
+								"universities"
+							]
 						}
-					}
+					},
+					"response": []
 				},
 				{
 					"name": "Get All Universities",
@@ -512,7 +510,9 @@
 									"    pm.expect(jsonData).to.be.an('array');",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -530,12 +530,17 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/universities",
-							"host": ["localhost"],
-							"port": "3000",
-							"path": ["api", "universities"]
+							"raw": "{{dominio}}/api/universities",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"api",
+								"universities"
+							]
 						}
-					}
+					},
+					"response": []
 				},
 				{
 					"name": "Get University By ID",
@@ -555,7 +560,9 @@
 									"    pm.expect(jsonData).to.have.property('city');",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -573,12 +580,18 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/universities/{{universityId}}",
-							"host": ["localhost"],
-							"port": "3000",
-							"path": ["api", "universities", "{{universityId}}"]
+							"raw": "{{dominio}}/api/universities/{{universityId}}",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"api",
+								"universities",
+								"{{universityId}}"
+							]
 						}
-					}
+					},
+					"response": []
 				},
 				{
 					"name": "Update University",
@@ -591,7 +604,9 @@
 									"    pm.response.to.have.status(200);",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -618,12 +633,18 @@
 							"raw": "{\n    \"name\": \"Universidad Actualizada\",\n    \"country\": \"Colombia\",\n    \"city\": \"Medellín\"\n}"
 						},
 						"url": {
-							"raw": "localhost:3000/api/universities/{{universityId}}",
-							"host": ["localhost"],
-							"port": "3000",
-							"path": ["api", "universities", "{{universityId}}"]
+							"raw": "{{dominio}}/api/universities/{{universityId}}",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"api",
+								"universities",
+								"{{universityId}}"
+							]
 						}
-					}
+					},
+					"response": []
 				}
 			]
 		},
@@ -647,7 +668,9 @@
 									"    pm.globals.set(\"professorId\", jsonData._id);",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -674,12 +697,17 @@
 							"raw": "{\n    \"name\": \"Dr. Juan Pérez\",\n    \"department\": \"Ciencias de la Computación\",\n    \"university\": \"{{universityId}}\"\n}"
 						},
 						"url": {
-							"raw": "localhost:3000/api/professors",
-							"host": ["localhost"],
-							"port": "3000",
-							"path": ["api", "professors"]
+							"raw": "{{dominio}}/api/professors",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"api",
+								"professors"
+							]
 						}
-					}
+					},
+					"response": []
 				},
 				{
 					"name": "Get All Professors",
@@ -697,7 +725,9 @@
 									"    pm.expect(jsonData).to.be.an('array');",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -715,12 +745,17 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/professors",
-							"host": ["localhost"],
-							"port": "3000",
-							"path": ["api", "professors"]
+							"raw": "{{dominio}}/api/professors",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"api",
+								"professors"
+							]
 						}
-					}
+					},
+					"response": []
 				},
 				{
 					"name": "Get Professor By ID",
@@ -739,7 +774,9 @@
 									"    pm.expect(jsonData).to.have.property('department');",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -757,12 +794,18 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/professors/{{professorId}}",
-							"host": ["localhost"],
-							"port": "3000",
-							"path": ["api", "professors", "{{professorId}}"]
+							"raw": "{{dominio}}/api/professors/{{professorId}}",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"api",
+								"professors",
+								"{{professorId}}"
+							]
 						}
-					}
+					},
+					"response": []
 				},
 				{
 					"name": "Update Professor",
@@ -775,7 +818,9 @@
 									"    pm.response.to.have.status(200);",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -802,12 +847,18 @@
 							"raw": "{\n    \"name\": \"Dr. Juan Pérez Actualizado\",\n    \"department\": \"Ingeniería de Software\"\n}"
 						},
 						"url": {
-							"raw": "localhost:3000/api/professors/{{professorId}}",
-							"host": ["localhost"],
-							"port": "3000",
-							"path": ["api", "professors", "{{professorId}}"]
+							"raw": "{{dominio}}/api/professors/{{professorId}}",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"api",
+								"professors",
+								"{{professorId}}"
+							]
 						}
-					}
+					},
+					"response": []
 				}
 			]
 		},
@@ -834,7 +885,9 @@
 									"    }",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -852,12 +905,17 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/users",
-							"host": ["localhost"],
-							"port": "3000",
-							"path": ["api", "users"]
+							"raw": "{{dominio}}/api/users",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
 						}
-					}
+					},
+					"response": []
 				},
 				{
 					"name": "Get All Users (Usuario Normal - Sin Permisos)",
@@ -875,7 +933,9 @@
 									"    pm.expect(jsonData.message).to.include(\"Forbidden\");",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -893,12 +953,17 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/users",
-							"host": ["localhost"],
-							"port": "3000",
-							"path": ["api", "users"]
+							"raw": "{{dominio}}/api/users",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
 						}
-					}
+					},
+					"response": []
 				},
 				{
 					"name": "Get User By ID",
@@ -919,7 +984,9 @@
 									"    pm.expect(jsonData).to.have.property('role');",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -937,12 +1004,18 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/users/{{userId}}",
-							"host": ["localhost"],
-							"port": "3000",
-							"path": ["api", "users", "{{userId}}"]
+							"raw": "{{dominio}}/api/users/{{userId}}",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{userId}}"
+							]
 						}
-					}
+					},
+					"response": []
 				}
 			]
 		},
@@ -966,7 +1039,9 @@
 									"    pm.globals.set(\"commentId\", jsonData._id);",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -993,12 +1068,17 @@
 							"raw": "{\n    \"professor\": \"{{professorId}}\",\n    \"content\": \"Excelente profesor, muy claro en sus explicaciones\"\n}"
 						},
 						"url": {
-							"raw": "localhost:3000/api/comments",
-							"host": ["localhost"],
-							"port": "3000",
-							"path": ["api", "comments"]
+							"raw": "{{dominio}}/api/comments",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"api",
+								"comments"
+							]
 						}
-					}
+					},
+					"response": []
 				},
 				{
 					"name": "Get All Comments",
@@ -1020,7 +1100,9 @@
 									"    pm.expect(jsonData).to.have.property('total');",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -1038,12 +1120,17 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/comments",
-							"host": ["localhost"],
-							"port": "3000",
-							"path": ["api", "comments"]
+							"raw": "{{dominio}}/api/comments",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"api",
+								"comments"
+							]
 						}
-					}
+					},
+					"response": []
 				},
 				{
 					"name": "Get Comment By ID",
@@ -1063,7 +1150,9 @@
 									"    pm.expect(jsonData).to.have.property('professor');",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -1081,12 +1170,18 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/comments/{{commentId}}",
-							"host": ["localhost"],
-							"port": "3000",
-							"path": ["api", "comments", "{{commentId}}"]
+							"raw": "{{dominio}}/api/comments/{{commentId}}",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"api",
+								"comments",
+								"{{commentId}}"
+							]
 						}
-					}
+					},
+					"response": []
 				},
 				{
 					"name": "Update Comment",
@@ -1099,7 +1194,9 @@
 									"    pm.response.to.have.status(200);",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -1126,14 +1223,50 @@
 							"raw": "{\n    \"content\": \"Comentario actualizado - Muy buen profesor\"\n}"
 						},
 						"url": {
-							"raw": "localhost:3000/api/comments/{{commentId}}",
-							"host": ["localhost"],
-							"port": "3000",
-							"path": ["api", "comments", "{{commentId}}"]
+							"raw": "{{dominio}}/api/comments/{{commentId}}",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"api",
+								"comments",
+								"{{commentId}}"
+							]
 						}
-					}
+					},
+					"response": []
 				}
 			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "dominio",
+			"value": ""
 		}
 	]
 }

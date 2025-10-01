@@ -1,6 +1,82 @@
 # Qualifica o seu professor
 Final project for Computation in the internet III
 
+## ¿Qué es la aplicación?
+
+**Qualifica o seu professor** es una plataforma web que permite a los estudiantes calificar y comentar sobre sus profesores universitarios. La aplicación facilita un sistema de retroalimentación académica donde:
+
+- Los **estudiantes** pueden buscar profesores por universidad, dejar comentarios y calificaciones
+- Los **administradores** pueden gestionar usuarios, universidades y profesores
+- Se mantiene un sistema de roles y permisos para controlar el acceso a las funcionalidades
+
+### Funcionalidades principales:
+- **Gestión de Usuarios**: Registro, autenticación y autorización con JWT
+- **Gestión de Universidades**: CRUD completo de instituciones educativas
+- **Gestión de Profesores**: CRUD completo de profesores asociados a universidades
+- **Sistema de Comentarios**: Los estudiantes pueden calificar y comentar profesores
+- **Control de Acceso**: Sistema de roles (superadmin, estudiante)
+
+## Configuración para Tests
+
+### Variables de Entorno para Postman
+
+Para ejecutar los tests de Postman correctamente, necesitas configurar la variable `{{dominio}}`:
+
+1. **Abrir Postman** y seleccionar la colección `apiExpress.postman_collection.json`
+2. **Configurar la variable de entorno**:
+   - Ve a **Environments** en Postman
+   - Crea un nuevo environment o edita uno existente
+   - Agrega la variable:
+     - **Variable**: `dominio`
+     - **Current Value**: `https://seal-app-kjtxo.ondigitalocean.app`
+3. **Seleccionar el environment** antes de ejecutar los tests
+
+### API Base URL
+```
+Production: https://seal-app-kjtxo.ondigitalocean.app
+```
+
+## Instalación y Configuración Local
+
+### Prerrequisitos
+- Node.js (v16 o superior)
+- MongoDB (local o MongoDB Atlas)
+- Git
+
+### Pasos de instalación
+1. **Clonar el repositorio**:
+   ```bash
+   git clone https://github.com/JohanDanielAguirre/qualifica-o-seu-professor.git
+   cd qualifica-o-seu-professor
+   ```
+
+2. **Instalar dependencias**:
+   ```bash
+   npm install
+   ```
+
+3. **Configurar variables de entorno**:
+   Crear un archivo `.env` en la raíz del proyecto:
+   ```env
+   PORT=3000
+   MONGODB_URI=mongodb://localhost:27017/qualifica-professor
+   JWT_SECRET=tu_jwt_secret_aqui
+   NODE_ENV=development
+   ```
+
+4. **Ejecutar la aplicación**:
+   ```bash
+   # Desarrollo
+   npm run dev
+   
+   # Producción
+   npm start
+   ```
+
+5. **Poblar la base de datos** (opcional):
+   ```bash
+   npm run seed
+   ```
 
 ## Objetivo: 
 
@@ -95,6 +171,39 @@ al interactuar con las rutas protegidas.
 
 • Simular escenarios de uso real, incluyendo la creación de relaciones entre
 módulos y la verificación de permisos basados en roles.
+
+## Cómo ejecutar los tests
+
+### Tests Unitarios (Jest)
+```bash
+# Instalar dependencias
+npm install
+
+# Ejecutar todos los tests
+npm test
+
+# Ejecutar tests con coverage
+npm run test:coverage
+
+# Ejecutar tests en modo watch
+npm run test:watch
+```
+
+### Tests de Integración (Postman)
+
+1. **Importar la colección**: Importa el archivo `apiExpress.postman_collection.json` en Postman
+2. **Configurar environment**:
+   - Variable: `dominio`
+   - Valor: `https://seal-app-kjtxo.ondigitalocean.app`
+3. **Ejecutar tests**: Selecciona el environment configurado y ejecuta los tests
+
+### API Endpoints Principales
+
+- **Auth**: `/api/auth/login`, `/api/auth/register`
+- **Users**: `/api/users` (CRUD completo)
+- **Universities**: `/api/universities` (CRUD completo)
+- **Professors**: `/api/professors` (CRUD completo)
+- **Comments**: `/api/comments` (CRUD completo)
 
 ## Entrega y Presentación:
 • El código fuente debe estar en un repositorio de GitHub, con un README claro
