@@ -28,12 +28,12 @@ Para ejecutar los tests de Postman correctamente, necesitas configurar la variab
    - Crea un nuevo environment o edita uno existente
    - Agrega la variable:
      - **Variable**: `dominio`
-     - **Current Value**: `https://seal-app-kjtxo.ondigitalocean.app`
+     - **Current Value**: `https://qualifica-o-seu-professor.onrender.com`
 3. **Seleccionar el environment** antes de ejecutar los tests
 
 ### API Base URL
 ```
-Production: https://seal-app-kjtxo.ondigitalocean.app
+Production: https://qualifica-o-seu-professor.onrender.com
 ```
 
 ## Instalación y Configuración Local
@@ -194,7 +194,7 @@ npm run test:watch
 1. **Importar la colección**: Importa el archivo `apiExpress.postman_collection.json` en Postman
 2. **Configurar environment**:
    - Variable: `dominio`
-   - Valor: `https://seal-app-kjtxo.ondigitalocean.app`
+   - Valor: `https://qualifica-o-seu-professor.onrender.com`
 3. **Ejecutar tests**: Selecciona el environment configurado y ejecuta los tests
 
 ### API Endpoints Principales
